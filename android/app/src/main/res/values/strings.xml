@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Ecolight</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="txv_title_temp">Ecolight</string>
+    <string name="txv_indoor_temp">Indoor temperature:</string>
+    <string name="txv_indoor_temp_show">11.11</string>
+    <string name="txv_indoor_humi">Indoor humidity:</string>
+    <string name="txv_indoor_humi_show">22.22</string>
+    <string name="txv_outdoor_light">Lighting State:</string>
+    <string name="txv_outdoor_light_show">Off</string>
+    <string name="txv_outdoor_light_on">On</string>
+    <string name="log_title">login</string>
+    <string name="account">Account number</string>
+    <string name="password">password</string>
+    <string name="check_password">remember</string>
+    <string name="check_login">auto</string>
+    <string name="login">Log in!</string>
+    <string name="loading">Loading...</string>
+
 </resources>
