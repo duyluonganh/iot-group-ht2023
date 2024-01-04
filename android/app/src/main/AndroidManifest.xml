@@ -13,13 +13,18 @@
         android:theme="@style/Theme.Ecolight"
         tools:targetApi="31">
         <activity
-            android:name=".ButtonActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme.Ecolight" />
+            android:label="Main Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LayoutActivity"
+            android:label="Layout Activity"></activity>
+
     </application>
 
 </manifest>
