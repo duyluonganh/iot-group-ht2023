@@ -42,8 +42,15 @@ def get_command():
 def get_voice_command():
     file = request.files['file']
     filename = secure_filename(file.filename)
-    file.save(os.path.join('/audio/', filename))
-    return redirect(url_for('download_file', name=filename))
+
+    os.makedirs("/audio_temp", exist_ok=True)
+    path = os.path.join(os.getcwd(), "/audio_temp", filename)
+    file.save(path)
+
+    return make_response(jsonify({
+        'message': 'OK',
+        'path' : path
+    }), 200)
 
 
 if __name__ == '__main__':
