@@ -16,8 +16,7 @@ def hello_world():  # put application's code here
 # get humidity and temperature
 @app.route('/info')
 def get_info():
-    humidity = iotservice.get_humidity()
-    temperature = iotservice.get_temperature()
+    temperature, humidity = iotservice.get_info()
     return jsonify({
         'message': 'OK',
         'humidity': humidity,
