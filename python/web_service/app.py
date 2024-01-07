@@ -1,4 +1,6 @@
-from flask import Flask, jsonify, request, make_response
+from flask import Flask, jsonify, request, make_response, redirect, url_for
+import os
+from werkzeug.utils import secure_filename
 
 import iotservice
 import voicerecognitionservice
@@ -10,7 +12,8 @@ app = Flask(__name__)
 def hello_world():  # put application's code here
     return 'Hello World!'
 
-#get humidity and temperature
+
+# get humidity and temperature
 @app.route('/info')
 def get_info():
     humidity = iotservice.get_humidity()
@@ -21,6 +24,7 @@ def get_info():
         'temperature': temperature
     })
 
+
 @app.route('/command', methods=['POST'])
 def get_command():
     query = request.args.get('query')
@@ -28,10 +32,19 @@ def get_command():
     return make_response(jsonify({
         'message': 'OK',
         'command': {
-            'command_type' : iot_command.command_type.value,
-            'properties' : iot_command.properties
+            'command_type': iot_command.command_type.value,
+            'properties': iot_command.properties
         }
     }), 200)
+
+
+@app.route('/voice_command', methods=['POST'])
+def get_voice_command():
+    file = request.files['file']
+    filename = secure_filename(file.filename)
+    file.save(os.path.join('/audio/', filename))
+    return redirect(url_for('download_file', name=filename))
+
 
 if __name__ == '__main__':
     app.run()
