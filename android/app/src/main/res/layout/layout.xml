@@ -1,7 +1,11 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/backg2">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backg2">
     <TextView
         android:id="@+id/title"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dip"
         android:gravity="center"
@@ -143,4 +147,20 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tvCommandResult"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/btn_command"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Command"
+        android:layout_margin="20dp"/>
+
+</LinearLayout>
