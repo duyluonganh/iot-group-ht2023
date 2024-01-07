@@ -47,6 +47,9 @@ def get_voice_command():
     path = os.path.join(os.getcwd(), "/audio_temp", filename)
     file.save(path)
 
+    voicerecognitionservice.get_voice_command(path)
+
+
     return make_response(jsonify({
         'message': 'OK',
         'path' : path
