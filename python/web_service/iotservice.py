@@ -4,7 +4,7 @@ import paramiko
 
 
 def get_info():  # call rasberi Pi to get humidity
-    hostname = '192.168.137.194'
+    hostname = '192.168.137.48'
     port = 22
 
     username = 'admin'
@@ -21,7 +21,7 @@ def get_info():  # call rasberi Pi to get humidity
         output = stdout.readlines()
         client.close()
 
-        if len(output) == 0:
+        if len(output) == 0: #sometimes, there are too many requests then API call to teldus will fail then we reserve this backup
             output = json.dumps({
                 "battery": "254",
                 "clientName": "iotworkshop1 - tellstick znet",
