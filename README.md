@@ -2,5 +2,5 @@
 
 How to use:
 
-Start `app.py` in `python/web_service`
-Start Android App in `android`
+- Start `app.py` in `python/web_service`
+- Start Android App in `android`
