@@ -4,7 +4,7 @@ import paramiko
 
 
 def get_info():  # call rasberi Pi to get humidity
-    hostname = '192.168.137.194'
+    hostname = '192.168.137.48'
     port = 22
 
     username = 'admin'
