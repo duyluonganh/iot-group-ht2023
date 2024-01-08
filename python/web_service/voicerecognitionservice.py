@@ -1,3 +1,4 @@
+import predict
 from iotcommand import IotCommand
 from iotcommandtype import IotCommandType
 
@@ -14,3 +15,6 @@ def get_iot_command(command):
         iot_command = IotCommand(other_command_type=IotCommandType.TURN_OFF_THE_LIGHT, other_properties=[])
     return {}
 
+def get_voice_command(file):
+    predict.predict_for_ws(file)
+    return {}

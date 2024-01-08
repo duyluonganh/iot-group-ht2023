@@ -1,0 +1,29 @@
+model: cnn1d
+
+# Dataset
+data_path: dataset/RAVDESS_1s_4categories  # Path
+class_labels: ["neutral","happy","sad","angry"]  # labels of emo
+
+# Feature storage
+feature_path: features/  # Path
+train_feature_path: features/train_cnn1d_opensmile_ravdess_IS10.csv  # The path for training features
+predict_feature_path: features/test_cnn1d_opensmile_ravdess_IS10.csv  # The path for predictive features
+
+# For Opensmile，just for 'feature_method: o'
+opensmile_config: IS10_paraling  # Opensmile standard feature set
+opensmile_path: D:\py\Opensmile\opensmile-3.0-win-x64\opensmile-3.0-win-x64/  # Opensmile installation path
+
+# checkpoints
+checkpoint_path: checkpoints/  # Path
+checkpoint_name: CNN1D_OPENSMILE_IS10  # file name for checkpoint
+
+# training parameters
+epochs: 30  #  training epoch
+batch_size: 32  #
+lr: 0.001  # learning rate
+
+# Model parameters
+n_kernels: 32  # Number of convolution kernels (the same for each convolution layer)
+kernel_sizes: [5, 5]  # The convolution kernel size of each convolution layer
+dropout: 0.5
+hidden_size: 32
