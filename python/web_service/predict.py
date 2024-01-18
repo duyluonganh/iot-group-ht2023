@@ -36,6 +36,8 @@ def predict(config, audio_path, model):
     print('Recogntion: ', config.class_labels[int(result)])
     print('Probability: ', result_prob)
 
+    return config.class_labels[int(result)]
+
 def predict_for_ws(audio_path):
     #audio_path = 'E:/CSS/IoT/reference/speech-emotion-recognition-master (3)/speech-emotion-recognition-master/dataset/RAVDESS_1s_4categories/sad/3-2.wav'
 
@@ -51,7 +53,7 @@ def predict_for_ws(audio_path):
     return predict(config, audio_path, model)
 
 if __name__ == '__main__':
-    audio_path = 'E:/CSS/IoT/reference/speech-emotion-recognition-master (3)/speech-emotion-recognition-master/dataset/RAVDESS_1s_4categories/sad/3-2.wav'
+    audio_path = 'D:\\Study\\Stockholm\\IOT\\project\\iot-group-ht2023\\python\\web_service\\dataset\\RAVDESS_1s_4categories\\angry\\1-1.wav'
 
     config = opts.parse_opt()
 
