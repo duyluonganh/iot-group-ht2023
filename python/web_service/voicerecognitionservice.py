@@ -16,5 +16,4 @@ def get_iot_command(command):
     return {}
 
 def get_voice_command(file):
-    predict.predict_for_ws(file)
-    return {}
+    return predict.predict_for_ws(file)

@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from keras.utils import np_utils
+from keras.utils import to_categorical
 import models
 import opensmile as of
 import utils.opts as opts
@@ -21,7 +21,7 @@ def train(config):
 
     # Train
     print('----- start training', config.model, '-----')
-    y_train, y_val = np_utils.to_categorical(y_train), np_utils.to_categorical(y_test) # One-Hot
+    y_train, y_val = to_categorical(y_train), to_categorical(y_test) # One-Hot
     model.train(
         x_train, y_train,
         x_test, y_val,

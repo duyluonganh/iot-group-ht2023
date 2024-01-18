@@ -31,16 +31,22 @@ def load_config(file_path):
 
 
 def parse_opt():
-    parser = argparse.ArgumentParser()
-    # config file
-    parser.add_argument(
-        '--config',
-        type=str,
-        default='cnn1d.yaml',
-        help='path to the configuration file (yaml)'
-    )
-    args = parser.parse_args()
-    config_dict = load_config(args.config)
+    config = ""
+    try:
+        parser = argparse.ArgumentParser()
+        # config file
+        parser.add_argument(
+            '--config',
+            type=str,
+            default='cnn1d.yaml',
+            help='path to the configuration file (yaml)'
+        )
+        args = parser.parse_args()
+        config = args.config
+    except:
+        config = 'cnn1d.yaml'
+
+    config_dict = load_config(config)
     config = Config(config_dict)
 
     return config
