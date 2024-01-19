@@ -24,11 +24,12 @@ Output：
 
 def get_feature_opensmile(config, filepath: str):
     # csv file used to store the characteristics of an audio
-    single_feat_path = 'E:/CSS/IoT/reference/speech-emotion-recognition-master (3)/speech-emotion-recognition-master/features/single_feature.csv'
+    dirpath = os.path.dirname(__file__)
+    single_feat_path = os.path.join(dirpath, 'features/single_feature.csv')
     # Opensmile configuration file path,we use IS10_paraling
     opensmile_config_path = os.path.join(config.opensmile_path, 'config/is09-13/IS10_paraling.conf')
     cmd3 = 'SMILExtract -C ' + opensmile_config_path + ' -I ' + filepath + ' -O ' + single_feat_path
-    cmd = subprocess.Popen(cmd3, cwd=config.opensmile_path + 'bin', stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+    cmd = subprocess.Popen(cmd3, cwd=config.opensmile_path + '/bin', stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE, shell=True).communicate()[0]
     reader = csv.reader(open(single_feat_path, 'r'))
     rows = [row for row in reader]

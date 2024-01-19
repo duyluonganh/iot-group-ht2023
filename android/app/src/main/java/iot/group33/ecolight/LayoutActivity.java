@@ -140,7 +140,7 @@ public class LayoutActivity extends AppCompatActivity {
                         if (result.equals("happy") || result.equals("neutral")) {
                             tvCommandResult.setText("Emotion: " + result + ". We will turn on the lights");
                         } else {
-                            tvCommandResult.setText("Emotion: " + result + ". We will turn on the lights");
+                            tvCommandResult.setText("Emotion: " + result + ". We will turnoff the lights");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
